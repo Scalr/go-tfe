@@ -654,9 +654,10 @@ func createVariable(t *testing.T, client *Client, w *Workspace) (*Variable, func
 
 	ctx := context.Background()
 	v, err := client.Variables.Create(ctx, VariableCreateOptions{
-		Key:       String(randomString(t)),
-		Value:     String(randomString(t)),
-		Category:  Category(CategoryTerraform),
+		Key:         String(randomString(t)),
+		Value:       String(randomString(t)),
+		Description: String(randomString(t)),
+		Category:    Category(CategoryTerraform),
 		Workspace: w,
 	})
 	if err != nil {
