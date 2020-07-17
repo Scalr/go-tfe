@@ -10,6 +10,7 @@ import (
 )
 
 func TestOrganizationMembershipsList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -77,6 +78,7 @@ func TestOrganizationMembershipsList(t *testing.T) {
 }
 
 func TestOrganizationMembershipsCreate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -126,6 +128,7 @@ func TestOrganizationMembershipsCreate(t *testing.T) {
 }
 
 func TestOrganizationMembershipsRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -159,6 +162,7 @@ func TestOrganizationMembershipsRead(t *testing.T) {
 }
 
 func TestOrganizationMembershipsReadWithOptions(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -190,6 +194,7 @@ func TestOrganizationMembershipsReadWithOptions(t *testing.T) {
 }
 
 func TestOrganizationMembershipsDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

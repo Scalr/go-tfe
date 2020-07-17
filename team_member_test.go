@@ -9,6 +9,7 @@ import (
 )
 
 func TestTeamMembersList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -45,6 +46,7 @@ func TestTeamMembersList(t *testing.T) {
 }
 
 func TestTeamMembersAdd(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -94,6 +96,7 @@ func TestTeamMembersAdd(t *testing.T) {
 }
 
 func TestTeamMembersRemove(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

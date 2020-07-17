@@ -7,10 +7,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 	"testing"
 	"time"
-
-	"github.com/hashicorp/go-uuid"
 )
 
 const badIdentifier = "! / nope"
@@ -291,21 +290,15 @@ func createOAuthToken(t *testing.T, client *Client, org *Organization) (*OAuthTo
 
 func createOrganization(t *testing.T, client *Client) (*Organization, func()) {
 	ctx := context.Background()
-	org, err := client.Organizations.Create(ctx, OrganizationCreateOptions{
-		Name:  String("tst-" + randomString(t)),
-		Email: String(fmt.Sprintf("%s@tfe.local", randomString(t))),
-	})
+
+	// Since we don't support create - existing organization is being used
+	orgl, err := client.Organizations.List(ctx,  OrganizationListOptions{})
 	if err != nil {
 		t.Fatal(err)
 	}
+	org := orgl.Items[0]
 
-	return org, func() {
-		if err := client.Organizations.Delete(ctx, org.Name); err != nil {
-			t.Errorf("Error destroying organization! WARNING: Dangling resources\n"+
-				"may exist! The full error is shown below.\n\n"+
-				"Organization: %s\nError: %s", org.Name, err)
-		}
-	}
+	return org, func() {}
 }
 
 func createOrganizationMembership(t *testing.T, client *Client, org *Organization) (*OrganizationMembership, func()) {
@@ -563,7 +556,10 @@ func createStateVersion(t *testing.T, client *Client, serial int64, w *Workspace
 	sv, err := client.StateVersions.Create(ctx, w.ID, StateVersionCreateOptions{
 		MD5:    String(fmt.Sprintf("%x", md5.Sum(state))),
 		Serial: Int64(serial),
+		// Lineage: String(base64.StdEncoding.EncodeToString(state)),
 		State:  String(base64.StdEncoding.EncodeToString(state)),
+		// vcs_commit_sha: String(base64.StdEncoding.EncodeToString(state)),
+		// vcs_commit_url: String(base64.StdEncoding.EncodeToString(state)),
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -779,9 +775,6 @@ func createWorkspaceWithVCS(t *testing.T, client *Client, org *Organization) (*W
 }
 
 func randomString(t *testing.T) string {
-	v, err := uuid.GenerateUUID()
-	if err != nil {
-		t.Fatal(err)
-	}
+	v := strconv.FormatInt(time.Now().UnixNano(), 10)  // replace to nanosecond
 	return v
 }

@@ -9,6 +9,7 @@ import (
 )
 
 func TestPolicySetParametersList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -56,6 +57,7 @@ func TestPolicySetParametersList(t *testing.T) {
 }
 
 func TestPolicySetParametersCreate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -156,6 +158,7 @@ func TestPolicySetParametersCreate(t *testing.T) {
 }
 
 func TestPolicySetParametersRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -193,6 +196,7 @@ func TestPolicySetParametersRead(t *testing.T) {
 }
 
 func TestPolicySetParametersUpdate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -257,6 +261,7 @@ func TestPolicySetParametersUpdate(t *testing.T) {
 }
 
 func TestParametersDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
