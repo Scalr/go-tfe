@@ -9,6 +9,7 @@ import (
 )
 
 func TestOrganizationsList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -47,6 +48,7 @@ func TestOrganizationsList(t *testing.T) {
 }
 
 func TestOrganizationsCreate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -92,6 +94,7 @@ func TestOrganizationsCreate(t *testing.T) {
 }
 
 func TestOrganizationsRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -126,6 +129,7 @@ func TestOrganizationsRead(t *testing.T) {
 }
 
 func TestOrganizationsUpdate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -182,6 +186,7 @@ func TestOrganizationsUpdate(t *testing.T) {
 }
 
 func TestOrganizationsDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -203,6 +208,7 @@ func TestOrganizationsDelete(t *testing.T) {
 }
 
 func TestOrganizationsCapacity(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -248,6 +254,7 @@ func TestOrganizationsCapacity(t *testing.T) {
 }
 
 func TestOrganizationsEntitlements(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -280,6 +287,7 @@ func TestOrganizationsEntitlements(t *testing.T) {
 }
 
 func TestOrganizationsRunQueue(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

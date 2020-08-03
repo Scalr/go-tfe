@@ -9,6 +9,7 @@ import (
 )
 
 func TestUsersReadCurrent(t *testing.T) {
+	t.Skip("Unsupported resource - deprecated profile")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -24,6 +25,7 @@ func TestUsersReadCurrent(t *testing.T) {
 }
 
 func TestUsersUpdate(t *testing.T) {
+	t.Skip("Unsupported resource - deprecated profile")
 	client := testClient(t)
 	ctx := context.Background()
 

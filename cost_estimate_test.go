@@ -15,15 +15,18 @@ func TestCostEstimatesRead(t *testing.T) {
 	orgTest, orgTestCleanup := createOrganization(t, client)
 	defer orgTestCleanup()
 
-	// Enable cost estimation for the test organization.
-	orgTest, err := client.Organizations.Update(
-		ctx,
-		orgTest.Name,
-		OrganizationUpdateOptions{
-			CostEstimationEnabled: Bool(true),
-		},
-	)
-	require.NoError(t, err)
+	/*
+		Unsupported resource
+		// Enable cost estimation for the test organization.
+		orgTest, err := client.Organizations.Update(
+			ctx,
+			orgTest.Name,
+			OrganizationUpdateOptions{
+				CostEstimationEnabled: Bool(true),
+			},
+		)
+		require.NoError(t, err)
+	*/
 
 	wTest, _ := createWorkspace(t, client, orgTest)
 	rTest, _ := createCostEstimatedRun(t, client, wTest)

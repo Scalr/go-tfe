@@ -9,6 +9,7 @@ import (
 )
 
 func TestSSHKeysList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -54,6 +55,7 @@ func TestSSHKeysList(t *testing.T) {
 }
 
 func TestSSHKeysCreate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -108,6 +110,7 @@ func TestSSHKeysCreate(t *testing.T) {
 }
 
 func TestSSHKeysRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -136,6 +139,7 @@ func TestSSHKeysRead(t *testing.T) {
 }
 
 func TestSSHKeysUpdate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -190,6 +194,7 @@ func TestSSHKeysUpdate(t *testing.T) {
 }
 
 func TestSSHKeysDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

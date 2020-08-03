@@ -9,6 +9,7 @@ import (
 )
 
 func TestTeamsList(t *testing.T) {
+	t.Skip("Unsupported resource - internal profile")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -56,6 +57,7 @@ func TestTeamsList(t *testing.T) {
 }
 
 func TestTeamsCreate(t *testing.T) {
+	t.Skip("Unsupported resource - internal profile")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -99,6 +101,7 @@ func TestTeamsCreate(t *testing.T) {
 }
 
 func TestTeamsRead(t *testing.T) {
+	t.Skip("Unsupported resource - internal profile")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -137,6 +140,7 @@ func TestTeamsRead(t *testing.T) {
 }
 
 func TestTeamsUpdate(t *testing.T) {
+	t.Skip("Unsupported resource - internal profile")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -192,6 +196,7 @@ func TestTeamsUpdate(t *testing.T) {
 }
 
 func TestTeamsDelete(t *testing.T) {
+	t.Skip("Unsupported resource - internal profile")
 	client := testClient(t)
 	ctx := context.Background()
 

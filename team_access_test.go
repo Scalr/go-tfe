@@ -9,6 +9,7 @@ import (
 )
 
 func TestTeamAccessesList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -73,6 +74,7 @@ func TestTeamAccessesList(t *testing.T) {
 }
 
 func TestTeamAccessesAdd(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -147,6 +149,7 @@ func TestTeamAccessesAdd(t *testing.T) {
 }
 
 func TestTeamAccessesRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -182,6 +185,7 @@ func TestTeamAccessesRead(t *testing.T) {
 }
 
 func TestTeamAccessesRemove(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

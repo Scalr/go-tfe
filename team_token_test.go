@@ -9,6 +9,7 @@ import (
 )
 
 func TestTeamTokensGenerate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -37,6 +38,7 @@ func TestTeamTokensGenerate(t *testing.T) {
 	})
 }
 func TestTeamTokensRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -67,6 +69,7 @@ func TestTeamTokensRead(t *testing.T) {
 }
 
 func TestTeamTokensDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

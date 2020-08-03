@@ -35,8 +35,6 @@ func TestRunsList(t *testing.T) {
 	})
 
 	t.Run("with list options", func(t *testing.T) {
-		t.Skip("paging not supported yet in API")
-
 		// Request a page number which is out of range. The result should
 		// be successful, but return no results if the paging options are
 		// properly passed along.
@@ -69,6 +67,7 @@ func TestRunsCreate(t *testing.T) {
 	cvTest, _ := createUploadedConfigurationVersion(t, client, wTest)
 
 	t.Run("without a configuration version", func(t *testing.T) {
+		t.Skip("Configuration version is required relationship")
 		options := RunCreateOptions{
 			Workspace: wTest,
 		}
@@ -96,8 +95,9 @@ func TestRunsCreate(t *testing.T) {
 
 	t.Run("with additional attributes", func(t *testing.T) {
 		options := RunCreateOptions{
-			Message:   String("yo"),
-			Workspace: wTest,
+			ConfigurationVersion: cvTest,
+			Message:              String("yo"),
+			Workspace:            wTest,
 		}
 
 		r, err := client.Runs.Create(ctx, options)
@@ -186,6 +186,7 @@ func TestRunsCancel(t *testing.T) {
 }
 
 func TestRunsForceCancel(t *testing.T) {
+	t.Skip("Unsupported resource - to be added by SCALRCORE-14850")
 	client := testClient(t)
 	ctx := context.Background()
 

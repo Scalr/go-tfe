@@ -10,6 +10,7 @@ import (
 )
 
 func TestPolicyChecksList(t *testing.T) {
+	t.Skip("Unsupported resource - policies")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -73,6 +74,7 @@ func TestPolicyChecksList(t *testing.T) {
 }
 
 func TestPolicyChecksRead(t *testing.T) {
+	t.Skip("Unsupported resource - policies")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -115,6 +117,7 @@ func TestPolicyChecksRead(t *testing.T) {
 }
 
 func TestPolicyChecksOverride(t *testing.T) {
+	t.Skip("Unsupported resource - policies")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -166,6 +169,7 @@ func TestPolicyChecksOverride(t *testing.T) {
 }
 
 func TestPolicyChecksLogs(t *testing.T) {
+	t.Skip("Unsupported resource - policies")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -174,6 +178,7 @@ func TestPolicyChecksLogs(t *testing.T) {
 
 	pTest, _ := createUploadedPolicy(t, client, true, orgTest)
 	wTest, _ := createWorkspace(t, client, orgTest)
+
 	createPolicySet(t, client, orgTest, []*Policy{pTest}, []*Workspace{wTest})
 
 	rTest, _ := createPlannedRun(t, client, wTest)

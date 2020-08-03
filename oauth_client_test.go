@@ -10,6 +10,7 @@ import (
 )
 
 func TestOAuthClientsList(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -74,6 +75,7 @@ func TestOAuthClientsList(t *testing.T) {
 }
 
 func TestOAuthClientsCreate(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -164,6 +166,7 @@ func TestOAuthClientsCreate(t *testing.T) {
 }
 
 func TestOAuthClientsRead(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -197,6 +200,7 @@ func TestOAuthClientsRead(t *testing.T) {
 }
 
 func TestOAuthClientsDelete(t *testing.T) {
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -226,6 +230,7 @@ func TestOAuthClientsDelete(t *testing.T) {
 }
 
 func TestOAuthClientsCreateOptionsValid(t *testing.T) {
+	t.Skip("Unsupported resource")
 	t.Run("with valid options", func(t *testing.T) {
 		options := OAuthClientCreateOptions{
 			APIURL:          String("https://api.github.com"),
