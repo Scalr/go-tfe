@@ -9,7 +9,7 @@ import (
 )
 
 func TestPoliciesList(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -68,7 +68,7 @@ func TestPoliciesList(t *testing.T) {
 }
 
 func TestPoliciesCreate(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -183,7 +183,7 @@ func TestPoliciesCreate(t *testing.T) {
 }
 
 func TestPoliciesRead(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -233,7 +233,7 @@ func TestPoliciesRead(t *testing.T) {
 }
 
 func TestPoliciesUpdate(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -309,7 +309,7 @@ func TestPoliciesUpdate(t *testing.T) {
 }
 
 func TestPoliciesDelete(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -339,7 +339,7 @@ func TestPoliciesDelete(t *testing.T) {
 }
 
 func TestPoliciesUpload(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 
@@ -368,7 +368,7 @@ func TestPoliciesUpload(t *testing.T) {
 }
 
 func TestPoliciesDownload(t *testing.T) {
-    t.Skip("Unsupported resource")
+	t.Skip("Unsupported resource")
 	client := testClient(t)
 	ctx := context.Background()
 

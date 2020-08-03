@@ -96,8 +96,8 @@ func TestRunsCreate(t *testing.T) {
 	t.Run("with additional attributes", func(t *testing.T) {
 		options := RunCreateOptions{
 			ConfigurationVersion: cvTest,
-			Message:   String("yo"),
-			Workspace: wTest,
+			Message:              String("yo"),
+			Workspace:            wTest,
 		}
 
 		r, err := client.Runs.Create(ctx, options)

@@ -85,12 +85,12 @@ func TestWorkspacesCreate(t *testing.T) {
 
 	t.Run("with valid options", func(t *testing.T) {
 		options := WorkspaceCreateOptions{
-			Name:                String("foo"),
-			AutoApply:           Bool(true),
-			Operations:          Bool(true),
-			QueueAllRuns:        Bool(true),
-			TerraformVersion:    String("0.12.19"),
-			WorkingDirectory:    String("bar/"),
+			Name:             String("foo"),
+			AutoApply:        Bool(true),
+			Operations:       Bool(true),
+			QueueAllRuns:     Bool(true),
+			TerraformVersion: String("0.12.19"),
+			WorkingDirectory: String("bar/"),
 		}
 
 		w, err := client.Workspaces.Create(ctx, orgTest.Name, options)
@@ -160,6 +160,7 @@ func TestWorkspacesRead(t *testing.T) {
 		w, err := client.Workspaces.Read(ctx, orgTest.Name, wTest.Name)
 
 		wsTime := time.Now()
+		// To be fixed by SCALRCORE-16419
 		wTest.CreatedAt, w.CreatedAt = wsTime, wsTime
 
 		require.NoError(t, err)
@@ -217,6 +218,7 @@ func TestWorkspacesReadByID(t *testing.T) {
 		w, err := client.Workspaces.ReadByID(ctx, wTest.ID)
 
 		wsTime := time.Now()
+		// To be fixed by SCALRCORE-16419
 		wTest.CreatedAt, w.CreatedAt = wsTime, wsTime
 
 		require.NoError(t, err)
@@ -277,12 +279,12 @@ func TestWorkspacesUpdate(t *testing.T) {
 
 	t.Run("with valid options", func(t *testing.T) {
 		options := WorkspaceUpdateOptions{
-			Name:                String(randomString(t)),
-			AutoApply:           Bool(false),
-			Operations:          Bool(false),
-			QueueAllRuns:        Bool(false),
-			TerraformVersion:    String("0.12.19"),
-			WorkingDirectory:    String("baz/"),
+			Name:             String(randomString(t)),
+			AutoApply:        Bool(false),
+			Operations:       Bool(false),
+			QueueAllRuns:     Bool(false),
+			TerraformVersion: String("0.12.19"),
+			WorkingDirectory: String("baz/"),
 		}
 
 		w, err := client.Workspaces.Update(ctx, orgTest.Name, wTest.Name, options)
@@ -356,12 +358,12 @@ func TestWorkspacesUpdateByID(t *testing.T) {
 
 	t.Run("with valid options", func(t *testing.T) {
 		options := WorkspaceUpdateOptions{
-			Name:                String(randomString(t)),
-			AutoApply:           Bool(false),
-			Operations:          Bool(false),
-			QueueAllRuns:        Bool(false),
-			TerraformVersion:    String("0.12.19"),
-			WorkingDirectory:    String("baz/"),
+			Name:             String(randomString(t)),
+			AutoApply:        Bool(false),
+			Operations:       Bool(false),
+			QueueAllRuns:     Bool(false),
+			TerraformVersion: String("0.12.19"),
+			WorkingDirectory: String("baz/"),
 		}
 
 		w, err := client.Workspaces.UpdateByID(ctx, wTest.ID, options)
@@ -490,7 +492,6 @@ func TestWorkspacesLock(t *testing.T) {
 
 	orgTest, orgTestCleanup := createOrganization(t, client)
 	defer orgTestCleanup()
-
 
 	wTest, _ := createWorkspace(t, client, orgTest)
 

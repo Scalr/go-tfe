@@ -292,10 +292,15 @@ func createOrganization(t *testing.T, client *Client) (*Organization, func()) {
 	ctx := context.Background()
 
 	// Since we don't support create - existing organization is being used
-	orgl, err := client.Organizations.List(ctx,  OrganizationListOptions{})
+	orgl, err := client.Organizations.List(ctx, OrganizationListOptions{})
 	if err != nil {
 		t.Fatal(err)
 	}
+
+	if len(orgl.Items) < 1 {
+		t.Fatal("Existing organization required")
+	}
+
 	org := orgl.Items[0]
 
 	return org, func() {}
@@ -557,7 +562,7 @@ func createStateVersion(t *testing.T, client *Client, serial int64, w *Workspace
 		MD5:    String(fmt.Sprintf("%x", md5.Sum(state))),
 		Serial: Int64(serial),
 		// Lineage: String(base64.StdEncoding.EncodeToString(state)),
-		State:  String(base64.StdEncoding.EncodeToString(state)),
+		State: String(base64.StdEncoding.EncodeToString(state)),
 		// vcs_commit_sha: String(base64.StdEncoding.EncodeToString(state)),
 		// vcs_commit_url: String(base64.StdEncoding.EncodeToString(state)),
 	})
@@ -775,6 +780,6 @@ func createWorkspaceWithVCS(t *testing.T, client *Client, org *Organization) (*W
 }
 
 func randomString(t *testing.T) string {
-	v := strconv.FormatInt(time.Now().UnixNano(), 10)  // replace to nanosecond
+	v := strconv.FormatInt(time.Now().UnixNano(), 10) // replace to nanosecond
 	return v
 }

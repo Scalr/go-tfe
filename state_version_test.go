@@ -40,6 +40,7 @@ func TestStateVersionsList(t *testing.T) {
 		// We need to strip the upload URL as that is a dynamic link.
 		svTest1.DownloadURL = ""
 		svTest2.DownloadURL = ""
+		// To be fixed by SCALRCORE-16419
 		svTest1.CreatedAt = svTime
 		svTest2.CreatedAt = svTime
 
@@ -52,9 +53,7 @@ func TestStateVersionsList(t *testing.T) {
 		assert.Contains(t, svl.Items, svTest1)
 		assert.Contains(t, svl.Items, svTest2)
 		assert.Equal(t, 1, svl.CurrentPage)
-		// looks like some bug in test - svl.Items contains 2 items, request.total_count set to 2 in API response
-		// but svl.TotalCount = 0
-		// assert.Equal(t, 2, svl.TotalCount)
+		assert.Equal(t, 2, svl.TotalCount)
 	})
 
 	t.Run("with list options", func(t *testing.T) {
@@ -74,7 +73,7 @@ func TestStateVersionsList(t *testing.T) {
 		require.NoError(t, err)
 		assert.Empty(t, svl.Items)
 		assert.Equal(t, 999, svl.CurrentPage)
-		assert.Equal(t, 0, svl.TotalCount)
+		assert.Equal(t, 2, svl.TotalCount)
 	})
 
 	t.Run("without an organization", func(t *testing.T) {
@@ -272,6 +271,7 @@ func TestStateVersionsRead(t *testing.T) {
 		// again during the GET.
 		svTest.DownloadURL, sv.DownloadURL = "", ""
 		svTime := time.Now()
+		// To be fixed by SCALRCORE-16419
 		svTest.CreatedAt, sv.CreatedAt = svTime, svTime
 
 		assert.Equal(t, svTest, sv)
